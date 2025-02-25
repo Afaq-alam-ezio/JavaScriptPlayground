@@ -34,8 +34,16 @@
 // console.log(value);             * value is "null" here.
 
 // EXAMPLE 6
-let score = "Afaq";
-let value = Number(score);
-console.log(typeof(score));
-console.log(typeof(value));
-console.log(value);
+// let score = "Afaq";
+// let value = Number(score);
+// console.log(typeof(score));
+// console.log(typeof(value));
+// console.log(value);
+
+// EXAMPLE 7
+// let score = false;
+// let value = Number(score);
+// console.log(typeof(score));
+// console.log(typeof(value));
+// console.log(value);                    * for true value is 1, for false value is 0
+
