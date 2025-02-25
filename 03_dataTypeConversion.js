@@ -47,3 +47,31 @@
 // console.log(typeof(value));
 // console.log(value);                    * for true value is 1, for false value is 0
 
+// EXAMPLE 8
+// let score = 1;
+// let value = Boolean(score);
+// console.log(typeof(score));
+// console.log(typeof(value));
+// console.log(value);
+
+// EXAMPLE 9
+// let score = -3;
+// let value = Boolean(score);
+// console.log(typeof(score));
+// console.log(typeof(value));
+// console.log(value);
+
+// EXAMPLE 10
+// let score = "";
+// let value = Boolean(score);
+// console.log(typeof(score));
+// console.log(typeof(value));
+// console.log(value);                  * Empty string gives "false"
+
+// EXAMPLE 11
+// let score = "Afaq";
+// let value = Boolean(score);
+// console.log(typeof(score));
+// console.log(typeof(value));
+// console.log(value);                     * non-empty string gives "true"
+
