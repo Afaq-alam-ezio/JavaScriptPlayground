@@ -21,3 +21,10 @@ console.log(Math.floor(564.24));
 console.log(Math.min(564, 24, 5));
 console.log(Math.max(564, 24, 7));
 
+console.log(Math.random());
+console.log(Math.random()*10);
+console.log(Math.floor(Math.random()*10));
+console.log((Math.floor(Math.random()*10)) + 1);
+
+
+
