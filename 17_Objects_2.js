@@ -77,3 +77,6 @@ console.log(Object.entries(obj5));      /* [
                                                 [ '6', 'b' ]
                                             ]
                                         */
+
+
+console.log(user.hasOwnProperty("name"));       // checks for presence of a " Key "
