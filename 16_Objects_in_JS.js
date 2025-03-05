@@ -55,5 +55,5 @@ Js.say2 = function (){
 console.log(Js.say1);        // this will return the "returnType" of the "say1()"
 console.log(Js.say1());      // this will return the output of the "say1()"
 
-console.log(Js.say2);      // this will return the "returnType" of the "say2()"
+console.log(Js.say2);        // this will return the "returnType" of the "say2()"
 console.log(Js.say2());      // this will return the output of the "say2()"
