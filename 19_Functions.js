@@ -45,4 +45,6 @@ function check(para1){
     return `hello ${para1}`;
 }
 
-console.log(check("Croma"));
+// console.log(check("Croma"));     returns -> " hello Croma "
+console.log(check());            // returns -> " Enter a valid username " and then " undefined " 
+                                 // due to " console.log(check()) "
