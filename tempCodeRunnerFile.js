@@ -1,39 +1,6 @@
-let sym = Symbol("empty");
-
-// Object below will have values in " Key : Value " pairs
-let Js = {
-    name : "Ezio",
-    roll : 1,
-    [sym] : "symbolString",
-    loggedIn : true,
-    fav : ["gaming", "Coding"],
-
-    say(){  
-
-        console.log(`hello my name is ${this.name}`);
-        
-    }
-
+// basic function that can handle " n " parameters by using " ' ... ' i.e. Rest operator"
+function handle(...para){
+    return para;
 }
 
-console.log(Js.name);       // correct but not recommended
-console.log(Js["name"]);    // correct and recommended
-console.log(Js[sym]);       // as symbol is mentioned above like { [sym] : "symbolString" } thus console.log(Js); will give returnType as " Symbol "
-
-console.log(Js);
-
-
-// Object.freeze(Js);
-
-// Js.name = "hello";  // will not work as Object is locked in above statement
-
-// look above in the object you'll see how this statement lies there
-Js.say = function (){  
-
-    console.log(`hello my name is ${this.name}`);
-
-};
-
-console.log(Js.say);        // this will return the "returnType" of the "say()"
-console.log(Js.say());      // this will return the output of the "say()"
-
+handle(100, 200, 300);
