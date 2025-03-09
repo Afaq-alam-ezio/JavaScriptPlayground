@@ -25,7 +25,7 @@
 // )();
 
 
-// 3. IIFE which is also called " NAMED IFFE" as the function below has a name i.e. " greet() "
+// 3. IIFE which is also called " NAMED IFFE" as the function below has name i.e. " greet() "
 (function greet(){
     
     console.log("hello Named IFFE");
