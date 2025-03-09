@@ -4,10 +4,10 @@
 (function (){
 
     console.log("hello, IIFE called");
-})();                                           // " ; " at the end is very necessary, as without it rest next IFFE will only give ERROR
+})();                                           // " ; " at the end is very necessary, as without it rest next IIFE will only give ERROR
 
 
-// 2. IIFE which is also called " SIMPLE IFFE"
+// 2. IIFE which is also called " SIMPLE IIFE"
 
 // 1. Below is normal function 
 (function (para1){
@@ -25,8 +25,8 @@
 // )();
 
 
-// 3. IIFE which is also called " NAMED IFFE" as the function below has name i.e. " greet() "
+// 3. IIFE which is also called " NAMED IIFE" as the function below has name i.e. " greet() "
 (function greet(){
     
-    console.log("hello Named IFFE");
+    console.log("hello Named IIFE");
 })();
