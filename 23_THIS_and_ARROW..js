@@ -82,9 +82,9 @@ console.log(retObj());
 
 // 2. shortened version of above that returns " undefined "
 
-let retObj2 = () => {name : "ez", sal : 12121};      //  will be undefined instead write by wrapping the return obj in a () like in below code 
+// let retObj2 = () => {name : "ez", sal : 12121};      //  will be undefined instead write by wrapping the return obj in a () like in below code 
 
-console.log(retObj2());
+// console.log(retObj2());
 
 
 // 3. corrected the above code
