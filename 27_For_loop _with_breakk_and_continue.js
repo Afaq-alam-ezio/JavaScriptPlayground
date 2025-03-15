@@ -30,8 +30,19 @@ for (let i = 0; i < 11; i++) {
 }
 
 
-// 4. Below we will be Breaking the loop when " i == 5 " 
+// 4. Below we will be iterating over an array
 console.log("Code 4 below : ")
+let Arr = ["harry", "smith", "conner", "ezio"];
+for (let i = 0; i < Arr.length; i++) {
+    
+    console.log(Arr[i]);    
+}
+console.log("\n");
+
+
+
+// 5. Below we will be Breaking the loop when " i == 5 " 
+console.log("Code 5 below : ")
 for (let i = 0; i < 10; i++) {
     
     if(i == 5){
@@ -44,7 +55,7 @@ for (let i = 0; i < 10; i++) {
 
 
 // 5. Below we will be skipping the loop when " i == 5 "
-console.log("Code 5 below : ")
+console.log("Code 6 below : ")
 for (let i = 0; i < 11; i++) {
     
     if (i == "5"){              // here we could have used " i == 5" simply, but " i == "5" " means that string of 5 was converted to number of 5 internally
