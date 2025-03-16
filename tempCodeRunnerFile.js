@@ -1,15 +1,14 @@
-let obj = {
+// 1. Below is basic " forof " loop on a string
+let x1 = "hello";
+for(let s of x1){
 
-    userName : "ezio",
+    console.log(s);
+}
 
-    // func : function() { console.log(`name is ${userName}`); }
-    show : function() { 
 
-        // console.log(`name is ${userName}`);      // only username will also work but see below 
-        console.log(`name is ${this.userName}`);    // " this " is pointing to the  current  object that's why
-                                                    // it also has the property " userName ", therefore we used it 
-    
-        console.log(this);
-        
-    }
+// 2. Below is basic " forof " loop on an array
+let x2 = [1, 2, 3, 4, 5];
+for(let s of x2){
+
+    console.log(s);
 }
