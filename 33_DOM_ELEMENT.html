@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    
+    <div class="week">
+
+        
+        <div class="day">monday</div>
+        <div class="day">tuesday</div>
+        <div class="day">wednesday</div>
+        <div class="day">thursday</div>
+
+    </div>
+</body>
+
+    <script>
+
+        // below we are creating an element and retrieving itt in numerous ways
+        let day = document.querySelector('.week')
+        console.log(day);
+        console.log(day.children);
+        console.log(day.children[0]);
+        console.log(day.children[0].innerHTML);
+
+        // we are looping the new created element "div" with altering its properties
+        for (let i = 0; i < day.children.length; i++) {
+            
+            day.children[i].style.backgroundColor = "black";
+            day.children[i].style.color = "yellow";
+            day.children[i].style.padding = "5px";
+            day.children[i].style.borderRadius = "5px";
+            console.log(day.children[i].innerHTML);
+            
+        }
+
+
+        // below we will retrieve the first child and the last child, also once retrieved we can enable modifications onto it
+        day.firstElementChild.style.color = "green";
+        day.lastElementChild.style.color = "blue"
+
+
+        // below we will find parent by its child and then apply modifications onto it
+        let parentElement = document.querySelector('.day');
+        console.log(parentElement.parentElement);           //   this will return the div with class = "week"
+        
+
+        // below we will find the next sibling element of current child
+        console.log(parentElement.nextElementSibling);
+        
+
+        // below is a deep and broad tree data structure that shows how JS manages the overall data
+        console.log(day.childNodes);
+
+        // Below we will see how to create any custom element
+        let customElement = document.createElement("h2");
+        
+        customElement.innerHTML = "hello world"
+        customElement.className = "heading";
+        customElement.id = Math.random()*10 + 10;
+        // below will be show itself when mouse is hovered over it 
+        customElement.setAttribute("title", "lone wolf");
+        customElement.style.backgroundColor = "blue";
+        customElement.style.color = "dark blue";
+        customElement.style.padding = "10px";
+
+        document.body.appendChild(customElement);
+
+    </script>
+
+</html>
