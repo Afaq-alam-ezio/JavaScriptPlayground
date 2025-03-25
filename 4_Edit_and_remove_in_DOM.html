@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style = "background-color: black; ">
+    <ol class="lang" style="border: 2px solid white; color: white; padding : 30px">
+        <li>ruby</li>
+    </ol>
+</body>
+
+    <script>
+
+    // 1. Below is an addElement() that adds element in <li>, but it is not optimized way
+        function addLang(lang){
+
+            let newLi = document.createElement('li');
+            newLi.innerHTML = `${lang}`;
+            newLi.style.color = "white";
+            document.querySelector('.lang').appendChild(newLi);
+        }
+        
+        addLang("Python")
+
+
+    // 2. Below is an addElement() that adds element in <li>, and its optimized way
+        function AddOptiLang(lang){
+
+            let li = document.createElement('li');
+            li.appendChild(document.createTextNode(lang));
+            document.querySelector('.lang').appendChild(li);
+        }    
+
+        AddOptiLang("mojo");
+
+
+    // 3. Below we'll learn how to edit element.
+        
+        // WAY 1 : using ".innerHTML"
+        let ediLi1 = document.querySelector('li:first-child');
+        ediLi1.innerHTML = "GoLang";
+
+        // WAY 2 : using ".outerHTML"
+        let ediLi2 = document.querySelector('li:nth-child(2)');
+        ediLi2.outerHTML = '<li>Jquery</li>';
+
+        // WAY 3 : using ".createTextNode()" but it will not replace the content but will only concat the new content with old one
+        let ediLi3 = document.querySelector('li:last-child');
+        ediLi3.appendChild(document.createTextNode("Django"));
+
+        // WAY 4 : using ".replaceWith()"
+        let ediLi4 = document.createElement('li');
+        ediLi4.appendChild(document.createTextNode("Javascript"));
+        ediLi3.replaceWith(ediLi4);
+
+
+    // 4. Below we will see how to remove any element, for ex : 2nd child
+    let remElement = document.querySelector('li:nth-child(2)');
+    remElement.remove();
+    
+    /*  below is a short form of doing the above task
+
+        document.querySelector('li:nth-child(1)').remove(); 
+
+    */
+
+    </script>
+</html>
