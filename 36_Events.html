@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Events </title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+
+<script>
+
+
+//  JS provides event propagation.
+/*
+    JavaScript Event Flow (Always in This Order):
+
+   1. Capturing Phase (aka trickling down) → from window → to target
+   2. Target Phase → the element actually clicked
+   3. Bubbling Phase → from target → back up to window
+
+    ✅ This sequence is defined by the DOM Level 2 Events specification.
+    💻 All event listeners, no matter when they’re added in code, will follow this model.
+
+*/
+
+//  by default it is "false" i.e. "EventBubble" having value as "false" in the 3rd parameter in below function, flow will be from "river" to "Images"
+    // document.getElementById('river').addEventListener('click', function(e){
+
+    //     console.log('clicked on river');
+    // }, false);
+
+
+    // document.getElementById('images').addEventListener('click', function(){
+
+    //     console.log("clicked on Images");
+    // }, false)
+
+
+//  now if we set it as "true" it will be "EventCapture" which means its flow is from top to down i.e. from "Images" to "river", 
+// also always write "child element" on top of "main element"
+    document.getElementById('river').addEventListener('click', function(e){
+            
+            console.log("clicked on river");
+            // e.stopPropagation();                         // no flow after this will work, program flow stops here for this "id" i.e. "river"
+        }, true);
+        
+        
+    document.getElementById('images').addEventListener('click', function(){
+        
+            console.log("clicked on Images");
+        }, true);
+
+
+//  now we will do some good task below
+    document.getElementById('images').addEventListener('click', function(e){
+
+        console.log(e.target);
+
+        // below will not remove all at once if clicked anywhere rather than image
+        if(e.target.tagName == 'IMG'){             // e.target.tagName Always Returns Uppercase that's why "IMG" and not "img"
+
+            e.target.parentNode.remove();       // e.target will give : <img width="200px" 
+        //                                                           id="river" 
+        //                                                           src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600&amp;lazy=load" 
+        //                                                           alt=""> 
+        //      thus ".parentNode" will give the <li> so that we can remove it
+        }
+        else if(e.target.parentNode.id == "images"){            // ".id" is case sensitive thus "images"
+            
+            e.target.parentNode.remove();
+        }
+    } ,false);
+
+
+//  now we will disable the google redirect on hitting it
+    document.getElementById('google').addEventListener('click', function(e){
+
+        e.preventDefault();
+        e.target.parentNode.remove();
+    } ,false);
+
+</script>
+
+</html>
