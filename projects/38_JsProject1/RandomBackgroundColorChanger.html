@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #5f5858; color: rgb(234, 240, 238); font-size: 25px;">
+
+    <div id = "button" style="display: flex; justify-content: center; align-items: center; margin-top: 350px; ">
+        <button id="start" style="
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: solid black;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+">Start Generating</button>
+    </div>
+
+    <div id = "button" style="display: flex; justify-content: center; align-items: center; margin-top: 30px;">
+        <button id="stop" style="
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: solid black;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+">Stop Generating</button>
+    </div>
+
+</body>
+<script>
+
+    let hexCode = "0123456789ABCDEF";
+
+    let change;
+    let changer = function(){
+
+        let randomColor = "#";
+        for (let i = 0; i < 6; i++) {
+
+            randomColor += hexCode[Math.floor(Math.random()*16)]; 
+        }
+
+        document.querySelector("body").style.backgroundColor = randomColor;
+    }
+
+    function set(){
+
+        change = setInterval(changer, 1000);
+    }
+
+
+    document.getElementById("start").addEventListener('click', function(){
+
+        set();
+    }, false);
+
+
+    document.getElementById("stop").addEventListener('click', function(){
+        
+        clearInterval(change);
+    },false);
+
+</script>
+</html>

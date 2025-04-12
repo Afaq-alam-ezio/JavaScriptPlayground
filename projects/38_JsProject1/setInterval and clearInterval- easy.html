@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #0f0f0f; color: rgb(234, 240, 238); font-size: 25px;">
+
+    <div id = "heading" style="display: flex; justify-content: center; margin-top: 300px;">
+        <h1 >Assasin's Creed 1</h1>
+    </div>
+
+    <div id = "button" style="display: flex; justify-content: center; align-items: center;">
+        <button id="start" >Start</button>
+    </div>
+
+    <div id = "button" style="display: flex; justify-content: center; align-items: center; margin-top: 30px;">
+        <button id="stop" >Stop</button>
+    </div>
+
+</body>
+<script>
+    
+    let change;     // use a variable to access the "setInterval()" i.e. " change = setInterval(changer, 1500, "wssup"); ", in the "clearInterval()"
+
+    let changer = function(message){
+
+        console.log(message + " " + Date.now());
+    }
+
+
+    function set(){
+
+        change = setInterval(changer, 1500, "wssup");
+    }
+
+
+    document.getElementById("start").addEventListener('click', function(){
+
+        set();
+    }, false);
+
+
+    document.getElementById("stop").addEventListener('click', function(){
+
+        clearInterval(change);
+    }, false);
+
+</script>
+</html>

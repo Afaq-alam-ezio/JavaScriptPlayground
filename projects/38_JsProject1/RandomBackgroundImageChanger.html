@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Changer</title>
+    <style>
+        body {
+            background-color: #5f5858;
+            color: rgb(234, 240, 238);
+            font-size: 25px;
+            transition: background-image 1s ease-in-out;
+            background-size: cover;
+            background-position: center center;
+            height: 100vh; /* Ensure the background takes up the full viewport height */
+        }
+
+        #button1, #button2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 350px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border: solid black;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #stop {
+            background-color: #dc3545; /* Change color of stop button */
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id = "button1" style="display: flex; justify-content: center; align-items: center; margin-top: 350px; ">
+        <button id="start">Start Generating</button>
+    </div>
+
+    <div id = "button2" style="display: flex; justify-content: center; align-items: center; margin-top: 30px;">
+        <button id="stop">Stop Generating</button>
+    </div>
+
+</body>
+<script>
+
+    let images = [
+                    "13194.jpg",
+                    "13210.jpg",
+                    "13220.jpg",
+                    "51397.jpg",
+                    "158913.jpg",
+                    "284530.jpg",
+                    "468739.jpg",
+                    "964050.png",
+                    "1255266 (2).png",
+                    "1255266.png",
+                    "1316138.png",
+                    "quan-jing-jiPK6tOiRqA-unsplash.jpg"
+                ];
+
+    let change;
+    let changer = function(){
+
+        let randomBackground = images[Math.floor(Math.random()*images.length)];
+        document.querySelector("body").style.backgroundImage = `url(${randomBackground})`;
+    }
+
+
+    function set(){
+
+        console.log(images.length);
+        
+        change = setInterval(changer, 3000);
+    }
+
+
+    document.getElementById("start").addEventListener('click', function(){
+
+        set();
+    }, false);
+
+
+    document.getElementById("stop").addEventListener('click', function(){
+        
+        clearInterval(change);
+    },false);
+
+</script>
+</html>
